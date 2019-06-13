@@ -64,7 +64,7 @@ class Product extends Component {
 				{({loading, err, data}) => {
 					if(!loading) {
 						const product = data.shop.productByHandle
-						return(<ProductFull product={product}/>)
+						return(<ProductFull product={product} addVariant={this.props.addVariant}/>)
 					} else {
 						return(<div>Loading...</div>)
 					}

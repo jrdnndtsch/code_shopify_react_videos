@@ -15,7 +15,6 @@ class ProductFull extends Component {
 		}
 		this.updateSelectedImg = this.updateSelectedImg.bind(this);
 		this.handleOptionChange = this.handleOptionChange.bind(this);
-		this.addVariant = this.addVariant.bind(this);
 	}
 
 	updateSelectedImg(image){
@@ -40,9 +39,6 @@ class ProductFull extends Component {
 		}).node
 	}
 
-	addVariant(variant) {
-		console.log(variant)
-	}
 
 	componentDidUpdate(prevProps, prevState){
 		if(prevState.selectedOptions !== this.state.selectedOptions) {
@@ -77,7 +73,7 @@ class ProductFull extends Component {
 					/>
 					<ProductBtn
 						selectedVariant={selectedVariant}
-						addVariant={this.addVariant}
+						addVariant={this.props.addVariant}
 					/>
 				</section>
 			</div>
