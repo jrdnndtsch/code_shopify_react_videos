@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
+import ProductFull from '../components/ProductFull';
+
 class Product extends Component {
 
 	createProductQuery(handle) {
@@ -62,7 +64,7 @@ class Product extends Component {
 				{({loading, err, data}) => {
 					if(!loading) {
 						const product = data.shop.productByHandle
-						return(<div>{product.title}</div>)
+						return(<ProductFull product={product}/>)
 					} else {
 						return(<div>Loading...</div>)
 					}
